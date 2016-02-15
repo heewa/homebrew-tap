@@ -4,7 +4,6 @@ class Bento < Formula
   url "git@github.com:heewa/bento", :using => :git, :tag => "v0.1.0-alpha.1"
   sha256 "70024a6f3122e14fd66c10ad0fe4cd05e0d437f7"
 
-  head "git@github.com:heewa/bento", :using => :git
 
   depends_on "go" => :build
   depends_on "glide" => :build
