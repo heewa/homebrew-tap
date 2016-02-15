@@ -7,6 +7,12 @@ class Bento < Formula
 
   option "without-man-page", "Skip installing man page"
 
+  devel do
+    url "git@github.com:heewa/bento", :using => :git, :revision => "9301dc012d8a515e00981525f2f49d1714c7346c"
+    version "0.1.0-alpha.1.1"
+    # TODO: when switching to tarball (public repo), list sha256
+  end
+
   depends_on "go" => :build
   depends_on "glide" => :build
 
