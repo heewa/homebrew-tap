@@ -5,6 +5,7 @@ class Bento < Formula
   version "0.1.0-alpha.1"
   # TODO: when switching to tarball (public repo), list sha256
 
+  option "without-man-page", "Skip installing man page"
 
   depends_on "go" => :build
   depends_on "glide" => :build
@@ -22,6 +23,12 @@ class Bento < Formula
 
       # TODO: How do I specifically use the brew-installed go binary? It matters :/
       system "go", "build", "-v", "-o", "bento", "main.go"
+
+      if build.with? "man-page"
+        system "./bento --help-man > bento.1"
+        man1.install "bento.1"
+      end
+
       bin.install "bento"
     end
   end
