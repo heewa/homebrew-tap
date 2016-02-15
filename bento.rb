@@ -11,6 +11,8 @@ class Bento < Formula
     url "git@github.com:heewa/bento", :using => :git, :revision => "9301dc012d8a515e00981525f2f49d1714c7346c"
     version "0.1.0-alpha.1.1"
     # TODO: when switching to tarball (public repo), list sha256
+
+    option "without-bash-complete", "Skip installing bash autocomplete support"
   end
 
   depends_on "go" => :build
@@ -33,6 +35,11 @@ class Bento < Formula
       if build.with? "man-page"
         system "./bento --help-man > bento.1"
         man1.install "bento.1"
+      end
+
+      if build.with? "bash-complete"
+        system "./bento --completion-script-bash > bento_completion.bash"
+        bash_completion.install "bento_completion.bash"
       end
 
       bin.install "bento"
