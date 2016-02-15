@@ -1,8 +1,9 @@
 class Bento < Formula
   desc "Simple service manager"
   homepage "https://github.com/heewa/bento"
-  url "git@github.com:heewa/bento", :using => :git, :tag => "v0.1.0-alpha.1"
-  sha256 "70024a6f3122e14fd66c10ad0fe4cd05e0d437f7"
+  url "git@github.com:heewa/bento", :using => :git, :tag => "v0.1.0-alpha.1", :revision => "70024a6f3122e14fd66c10ad0fe4cd05e0d437f7"
+  version "0.1.0-alpha.1"
+  # TODO: when switching to tarball (public repo), list sha256
 
 
   depends_on "go" => :build
@@ -10,17 +11,17 @@ class Bento < Formula
 
   def install
     # Copy the project to a valid gopath
-    sources = `ls`.split("\n")
-    (buildpath + "src/github.com/heewa/bento").install *sources
+    (buildpath/"src/github.com/heewa/bento").install Dir["*"]
 
     ENV["GOPATH"] = buildpath
     ENV["GO15VENDOREXPERIMENT"] = "1"
 
     cd "src/github.com/heewa/bento" do
-      # Install dependencies
+      # Install dependencies. TODO: make these homebrew resources
       system "glide", "install"
 
-      system "go", "build", "-o", "bento", "main.go"
+      # TODO: How do I specifically use the brew-installed go binary? It matters :/
+      system "go", "build", "-v", "-o", "bento", "main.go"
       bin.install "bento"
     end
   end
