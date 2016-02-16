@@ -5,9 +5,9 @@ class Bento < Formula
   homepage "https://gist.github.com/heewa/8a3b8bc5eddcef5b8b84"
 
   stable do
-    url "https://s3.amazonaws.com/heewa.bento/releases/bento-v0.1.0-alpha.2.tar.gz"
-    version "0.1.0-alpha.2"
-    sha256 "28ad29b8f1bb59d26880c8a6f974b2589562526aee5ae0f0531076592ad92402"
+    url "https://s3.amazonaws.com/heewa.bento/releases/bento-v0.1.0-alpha.2.1.tar.gz"
+    version "0.1.0-alpha.2.1"
+    sha256 "0bcccb49e61bf57afb9869dbf518d9a1024f41cea610a734471de13bfca06632"
 
     # Go deps, generated from `glide brew`
 
@@ -65,9 +65,8 @@ class Bento < Formula
   end
 
   devel do
-    url "git@github.com:heewa/bento", :using => :git, :revision => "0413ea618de286e5f627ae642303ae658418d655"
-    version "0.1.0-alpha.2"
-    sha256 "28ad29b8f1bb59d26880c8a6f974b2589562526aee5ae0f0531076592ad92402"
+    url "git@github.com:heewa/bento", :using => :git, :revision => "v0.1.0-alpha.2.1"
+    version "0.1.0-alpha.2.1"
 
     depends_on "glide" => :build
   end
