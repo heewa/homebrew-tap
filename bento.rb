@@ -1,18 +1,17 @@
 class Bento < Formula
   desc "Simple service manager"
-  homepage "https://github.com/heewa/bento"
-  url "git@github.com:heewa/bento", :using => :git, :tag => "v0.1.0-alpha.1", :revision => "70024a6f3122e14fd66c10ad0fe4cd05e0d437f7"
-  version "0.1.0-alpha.1"
-  # TODO: when switching to tarball (public repo), list sha256
+  homepage "https://gist.github.com/heewa/8a3b8bc5eddcef5b8b84"
+  url "https://s3.amazonaws.com/heewa.bento/releases/bento-v0.1.0-alpha.2.tar.gz"
+  version "0.1.0-alpha.2"
+  sha256 "28ad29b8f1bb59d26880c8a6f974b2589562526aee5ae0f0531076592ad92402"
 
   option "without-man-page", "Skip installing man page"
+  option "without-bash-complete", "Skip installing bash autocomplete support"
 
   devel do
-    url "git@github.com:heewa/bento", :using => :git, :revision => "9301dc012d8a515e00981525f2f49d1714c7346c"
-    version "0.1.0-alpha.1.1"
-    # TODO: when switching to tarball (public repo), list sha256
-
-    option "without-bash-complete", "Skip installing bash autocomplete support"
+    url "git@github.com:heewa/bento", :using => :git, :revision => "0413ea618de286e5f627ae642303ae658418d655"
+    version "0.1.0-alpha.2"
+    sha256 "28ad29b8f1bb59d26880c8a6f974b2589562526aee5ae0f0531076592ad92402"
   end
 
   depends_on "go" => :build
