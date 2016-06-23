@@ -1,8 +1,8 @@
 class GlideBrew < Formula
   desc "Convert Go deps managed by glide to Homebrew resources"
   homepage "https://github.com/heewa/glide-brew"
-  url "git@github.com:heewa/glide-brew", :using => :git, :revision => "v0.1.0"
-  version "0.1.0"
+  url "git@github.com:heewa/glide-brew", :using => :git, :revision => "v0.1.1"
+  version "0.1.1"
 
   depends_on "glide"
 
@@ -13,7 +13,7 @@ class GlideBrew < Formula
   end
 
   go_resource "github.com/Masterminds/glide" do
-    url "git://github.com/heewa/glide.git", :using => :git, :revision => "6cd634cbe70d7ae8638e54aacb5d69850378536c"
+    url "https://github.com/Masterminds/glide", :using => :git, :revision => "22afecf135d9e686b2e0872ad34f03756552905d"
   end
 
   go_resource "github.com/Masterminds/semver" do
